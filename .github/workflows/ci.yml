@@ -8,8 +8,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: fwilhe2/setup-kotlin@main
-      - run: kotlinc myProgram.kt -include-runtime -d /tmp/hello.jar; java -jar /tmp/hello.jar
-      - run: kotlin myScript.main.kts
+      - run: kotlinc -version
+      - run: kotlinc src/main/kotlin/com/bishwajeet/designpattern/creational/abstractfactory/ClientApp.kt 
+      - run: kotlin src/main/kotlin/com/bishwajeet/designpattern/creational/abstractfactory/ClientApp.main.kts
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4.0.1
         with:
